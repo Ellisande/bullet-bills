@@ -1,6 +1,6 @@
 import { Bill } from "@prisma/client";
 import { addMonths, formatDistance, subDays } from "date-fns";
-import { sortBy } from "lodash";
+import { sortBy, sumBy } from "lodash";
 import {
   MetaFunction,
   LinksFunction,
@@ -134,19 +134,21 @@ const BillRow = (props: { bill: Bill; type: "upcoming" | "paid" }) => {
 export default function Index() {
   let { bills, upcomingBills, recentlyPaidBills } = useRouteData();
 
+  const upcomingSum = sumBy(upcomingBills, "amount");
+  const paidSum = sumBy(recentlyPaidBills, "amount");
   return (
     <div className="layout">
       <Link to="/create" className="create-link button confirm">
         Create a New Bill
       </Link>
       <div className="bill-list upcoming">
-        <h3>Upcoming Bills</h3>
+        <h3>Upcoming Bills ${upcomingSum}</h3>
         {upcomingBills.map((bill: Bill) => (
           <BillRow bill={bill} key={bill.id} type="upcoming" />
         ))}
       </div>
       <div className="bill-list paid">
-        <h3>Recently Paid</h3>
+        <h3>Recently Paid ${paidSum}</h3>
         {recentlyPaidBills.map((bill: Bill) => (
           <BillRow bill={bill} key={bill.id} type="paid" />
         ))}
