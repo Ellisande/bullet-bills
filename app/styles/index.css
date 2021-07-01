@@ -1,0 +1,62 @@
+/* 
+ * when the user visits this page, this style will apply, when they leave, it
+ * will get unloaded, so don't worry so much about conflicting styles between
+ * pages!
+ */
+.layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr auto;
+  min-width: 90vw;
+  justify-content: center;
+  align-items: center;
+  column-gap: 1em;
+}
+
+.layout > *:first-child {
+  margin-top: 2em;
+}
+
+.bill-layout {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  text-align: center;
+  column-gap: 0.2em;
+  padding: 0.5em;
+  border: 1px solid grey;
+  border-radius: 7px;
+  margin: 0.4em;
+}
+
+.bill-due {
+  grid-column: 1;
+  grid-row: 2;
+}
+
+.bill-actions {
+  grid-column: 2;
+  grid-row: 1/3;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.bill-actions > * + * {
+  margin-left: 0.5em;
+}
+
+.create-link {
+  grid-column: 1/3;
+  align-self: center;
+  justify-self: center;
+}
+
+.upcoming {
+  grid-column: 1;
+}
+
+.paid {
+  grid-column: 2;
+}

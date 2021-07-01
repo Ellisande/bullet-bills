@@ -1,0 +1,40 @@
+:focus:not(:focus-visible) {
+  outline: none;
+}
+
+body {
+  font-family: sans-serif;
+  background-color: rgb(56, 55, 55);
+  color: #ccc;
+}
+
+a {
+  color: rgb(224, 114, 224);
+  text-decoration: none;
+  transition: color 0.2s ease-in-out;
+}
+
+a:hover {
+  color: rgb(214, 90, 214);
+}
+
+a.button:hover {
+  color: white;
+}
+
+.button {
+  border-radius: 6px;
+  border-width: 0;
+  padding: 1em;
+  color: rgb(65, 63, 63);
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.confirm {
+  background-color: rgb(143, 143, 211);
+}
+
+.cancel {
+  background-color: rgb(228, 135, 135);
+}

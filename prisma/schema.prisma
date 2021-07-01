@@ -1,0 +1,29 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+model Bill {
+  id        Int       @id @default(autoincrement())
+  name      String
+  site      String
+  amount    Int
+  paid      Boolean   @default(false)
+  frequency String    @default("monthly")
+  dueDate   DateTime
+  paidAt    DateTime?
+}
+
+// name: "SRP",
+// site: "http://www.srp.org",
+// amount: 200.0,
+// paid: false,
+// frequency: "Monthly",
+// dueDate: moment().toDate()
