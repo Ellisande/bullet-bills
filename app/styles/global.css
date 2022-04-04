@@ -1,0 +1,30 @@
+:root {
+  --action-color: rgb(128, 128, 235);
+  --delete-color: rgb(199, 80, 80);
+}
+
+:focus:not(:focus-visible) {
+  outline: none;
+}
+
+body {
+  font-family: sans-serif;
+  background-color: rgb(59, 59, 59);
+  color: #ccc;
+}
+
+a {
+  color: rgb(120, 97, 182);
+}
+
+footer {
+  text-align: center;
+  color: #ccc;
+  padding-top: 80px;
+}
+
+.bill-button {
+  border-radius: 7px;
+  border-width: 0;
+  padding: 0.3em 0.5em 0.3em 0.5em;
+}

@@ -1,0 +1,43 @@
+.bill-create {
+  display: flex;
+  flex-direction: column;
+  margin-top: 10vh;
+  margin-left: 10em;
+  margin-right: 10em;
+  min-width: 50vw;
+}
+
+.bill-create > * {
+  padding-top: 1em;
+  padding-bottom: 1em;
+}
+
+fieldset {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  min-width: 50vw;
+  border: 0;
+  border-bottom: 1px solid #ccc;
+}
+
+fieldset input,
+fieldset select {
+  border-radius: 7px;
+  background-color: #ccc;
+  border: 0;
+  padding: 0.2em;
+}
+
+.bill-create-action {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.create {
+  background-color: rgb(128, 128, 235);
+  padding: 9px;
+  color: white;
+  font-weight: bold;
+}

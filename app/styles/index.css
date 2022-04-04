@@ -1,0 +1,52 @@
+.bill-list > * + * {
+  margin-top: 1.5em;
+}
+
+.bill {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  border-radius: 7px;
+  border: 1px solid #ccc;
+  padding: 5px;
+}
+
+/* .bill-name {
+} */
+
+.bill-due {
+  grid-column: 1;
+  grid-row: 2;
+}
+
+.bill-pay-form {
+  align-self: center;
+}
+
+.bill-actions {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  grid-column: 2;
+  grid-row: 1 / 3;
+}
+
+button.delete {
+  background-color: var(--delete-color);
+  color: white;
+  font-weight: bold;
+}
+
+button.pay {
+  background-color: var(--action-color);
+  color: white;
+}
+
+.layout {
+  text-align: center;
+  padding: 20px;
+}
+
+.layout > * {
+  margin-top: 1.5em;
+}

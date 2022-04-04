@@ -1,0 +1,22 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+model Bill {
+  id        Int      @id @default(autoincrement())
+  name      String
+  site      String
+  amount    Int
+  paid      Boolean  @default(false)
+  dueDate   DateTime
+  frequency String   @default("monthly")
+  deleted   Boolean  @default(false)
+}
